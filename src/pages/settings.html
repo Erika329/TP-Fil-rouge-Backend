@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--Erika KAMDOM FOTSO 3A FISE-->
+<!--TP Fil Rouge / Application de gestion de Ticket-->
+<!--Page paramètres-->
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Paramètres - Ticketing</title>
+		<link rel="stylesheet" href="../assets/css/style.css">
+	</head>
+	<body class="body-dash">
+		<header>
+			<div class="tableau_de_bord">
+				<h1>Paramètres</h1>
+								<nav class="Navigation_principale">
+									<ul>
+										<li><a href="dashboard.html">Tableau de bord</a></li>
+										<li><a href="projects.html">Projets</a></li>
+										<li><a href="tickets.html">Tickets</a></li>
+										<li><a href="ticket create.html">Créer un ticket</a></li>
+										<li><a href="clients.html">Clients</a></li>
+										<li><a href="profile.html">Profil</a></li>
+										<li><a href="settings.html">Paramètres</a></li>
+					</ul>
+								</nav>
+								<button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+							</div>
+		</header>
+
+		<main>
+			<section aria-labelledby="preferences">
+				<h2 id="preferences">Préférences</h2>
+				<form>
+					<label for="langue">Langue</label>
+					<select id="langue" name="langue">
+						<option value="fr">Français</option>
+						<option value="en">English</option>
+					</select>
+					<label for="notifications">Notifications</label>
+					<select id="notifications" name="notifications">
+						<option value="toutes">Toutes</option>
+						<option value="importantes">Importantes</option>
+						<option value="aucune">Aucune</option>
+					</select>
+					<button type="submit">Sauvegarder</button>
+				</form>
+			</section>
+
+			<section aria-labelledby="infos-organisation">
+				<h2 id="infos-organisation">Organisation</h2>
+				<ul>
+					<li>Nom : ESN Exemple</li>
+					<li>Fuseau horaire : Europe/Paris</li>
+					<li>Facturation : Mensuelle</li>
+				</ul>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+		</footer>
+	</body>
+</html>

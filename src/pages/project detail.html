@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--Erika KAMDOM FOTSO 3A FISE-->
+<!--TP Fil Rouge / Application de gestion de Ticket-->
+<!--Page détail d'un projet-->
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Détail du projet - Ticketing</title>
+		<link rel="stylesheet" href="../assets/css/style.css">
+	</head>
+	<body class="body-dash">
+		<header>
+			<div class="tableau_de_bord">
+				<h1>Détail du projet</h1>
+				<nav class="Navigation_principale">
+					<ul>
+						<li><a href="dashboard.html">Tableau de bord</a></li>
+						<li><a href="projects.html">Projets</a></li>
+						<li><a href="tickets.html">Tickets</a></li>
+						<li><a href="ticket create.html">Créer un ticket</a></li>
+						<li><a href="clients.html">Clients</a></li>
+						<li><a href="profile.html">Profil</a></li>
+						<li><a href="settings.html">Paramètres</a></li>
+					</ul>
+				</nav>
+				<button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+			</div>
+		</header>
+
+		<main>
+			<section aria-labelledby="resume-projet">
+				<h2 id="resume-projet">Résumé</h2>
+				<ul>
+					<li>Projet : Portail client</li>
+					<li>Client : Agence Nova</li>
+					<li>Contrat : 50h / an</li>
+					<li>Heures restantes : 18h</li>
+					<li>Statut : Actif</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="contrat-projet">
+				<h2 id="contrat-projet">Contrat</h2>
+				<ul>
+					<li>Enveloppe : 50h / an</li>
+					<li>Période : 2026</li>
+					<li>Taux heures sup. : 80€ / h</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="collaborateurs-projet">
+				<h2 id="collaborateurs-projet">Collaborateurs</h2>
+				<ul>
+					<li>Erika K.</li>
+					<li>Samy N.</li>
+					<li>Maya L.</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="tickets-projet">
+				<h2 id="tickets-projet">Tickets liés</h2>
+				<table>
+					<caption>Tickets du projet</caption>
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Titre</th>
+							<th scope="col">Statut</th>
+							<th scope="col">Type</th>
+							<th scope="col">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>#TK-001</td>
+							<td>Bug formulaire contact</td>
+							<td>En cours</td>
+							<td>Inclus</td>
+							<td><a href="ticket detail.html">Voir</a></td>
+						</tr>
+						<tr>
+							<td>#TK-003</td>
+							<td>Demande de maquette</td>
+							<td>Nouveau</td>
+							<td>Facturable</td>
+							<td><a href="ticket detail.html">Voir</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<p><a href="ticket create.html">Créer un ticket</a></p>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+		</footer>
+	</body>
+</html>

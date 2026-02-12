@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets - Admin</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+<body class="body-dash role-admin">
+  <header>
+    <div class="tableau_de_bord">
+      <h1>Tickets administrateur</h1>
+      <nav class="Navigation_principale">
+        <ul>
+          <li><a href="dashboard-admin.html">Tableau de bord</a></li>
+          <li><a href="users.html">Utilisateurs</a></li>
+          <li><a href="clients-admin.html">Clients</a></li>
+          <li><a href="projects-admin.html">Projets</a></li>
+          <li><a href="tickets-admin.html">Tickets</a></li>
+          <li><a href="contracts.html">Contrats</a></li>
+          <li><a href="settings-admin.html">Paramètres</a></li>
+        </ul>
+      </nav>
+      <button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+    </div>
+  </header>
+  <main>
+    <section aria-labelledby="liste-tickets">
+      <h2 id="liste-tickets">Gestion des tickets</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Projet</th>
+            <th>Statut</th>
+            <th>Priorité</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#TK-001</td>
+            <td>Bug formulaire contact</td>
+            <td>Portail client</td>
+            <td>En cours</td>
+            <td>Haute</td>
+            <td>Inclus</td>
+            <td><button><a href="ticket detail-admin.html">Voir</a></button>|<button>Forcer statut</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+  </footer>
+</body>
+  <script src="../js/app.js" defer></script>
+
+</html>

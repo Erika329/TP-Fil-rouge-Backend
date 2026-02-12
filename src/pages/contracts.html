@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--Erika KAMDOM FOTSO 3A FISE-->
+<!--TP Fil Rouge / Application de gestion de Ticket-->
+<!--Page gestion contrats-->
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Contrats - Ticketing</title>
+		<link rel="stylesheet" href="../assets/css/style.css">
+	</head>
+	<body class="body-dash role-admin">
+		<header>
+			<div class="tableau_de_bord">
+				<h1>Contrats</h1>
+				<nav class="Navigation_principale">
+					<ul>
+						<li><a href="dashboard-admin.html">Tableau de bord</a></li>
+						<li><a href="users.html">Utilisateurs</a></li>
+						<li><a href="clients-admin.html">Clients</a></li>
+						<li><a href="projects-admin.html">Projets</a></li>
+						<li><a href="tickets-admin.html">Tickets</a></li>
+						<li><a href="contracts.html">Contrats</a></li>
+						<li><a href="settings-admin.html">Paramètres</a></li>
+					</ul>
+				</nav>
+				<button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+			</div>
+		</header>
+
+		<main>
+			<section aria-labelledby="liste-contrats">
+				<h2 id="liste-contrats">Contrats actifs</h2>
+				<table>
+					<caption>Contrats par projet</caption>
+					<thead>
+						<tr>
+							<th scope="col">Projet</th>
+							<th scope="col">Client</th>
+							<th scope="col">Heures incluses</th>
+							<th scope="col">Période</th>
+							<th scope="col">Taux sup.</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Portail client</td>
+							<td>Agence Nova</td>
+							<td>50h / an</td>
+							<td>2026</td>
+							<td>80€/h</td>
+						</tr>
+						<tr>
+							<td>Intranet RH</td>
+							<td>Clinique Orion</td>
+							<td>30h / an</td>
+							<td>2026</td>
+							<td>75€/h</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+		</footer>
+	</body>
+</html>

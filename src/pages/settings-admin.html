@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres administrateur</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="body-dash role-admin">
+  <header>
+    <div class="tableau_de_bord">
+      <h1>Paramètres administrateur</h1>
+      <nav class="Navigation_principale">
+        <ul>
+          <li><a href="dashboard-admin.html">Tableau de bord</a></li>
+          <li><a href="users.html">Utilisateurs</a></li>
+          <li><a href="clients-admin.html">Clients</a></li>
+          <li><a href="projects-admin.html">Projets</a></li>
+          <li><a href="tickets-admin.html">Tickets</a></li>
+          <li><a href="contracts.html">Contrats</a></li>
+          <li><a href="settings-admin.html">Paramètres</a></li>
+        </ul>
+      </nav>
+      <button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+    </div>
+  </header>
+  <main>
+    <section aria-labelledby="preferences">
+      <h2 id="preferences">Préférences administrateur</h2>
+      <form>
+        <label for="langue">Langue</label>
+        <select id="langue" name="langue">
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button type="submit">Sauvegarder</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+  </footer>
+</body>
+</html>

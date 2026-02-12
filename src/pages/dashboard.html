@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--Erika KAMDOM FOTSO 3A FISE-->
+<!--TP Fil Rouge / Application de gestion de Ticket-->
+<!--Page tableau de bord-->
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tableau de bord - Ticketing</title>
+		<link rel="stylesheet" href="../assets/css/style.css">
+	</head>
+	<body class="body-dash">
+		<header>
+			<div class="tableau_de_bord">
+				<h1>Tableau de bord</h1>
+				<nav class="Navigation_principale">
+					<ul>
+						<li><a href="dashboard.html">Tableau de bord</a></li>
+						<li><a href="projects.html">Projets</a></li>
+						<li><a href="tickets.html">Tickets</a></li>
+						<li><a href="ticket create.html">Créer un ticket</a></li>
+						<li><a href="clients.html">Clients</a></li>
+						<li><a href="profile.html">Profil</a></li>
+						<li><a href="settings.html">Paramètres</a></li>
+					</ul>
+				</nav>
+				<button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+			</div>
+		</header>
+
+		<main>
+			<section aria-labelledby="resume">
+				<h2 id="resume">Résumé</h2>
+				<ul class="resume">
+					<li>Tickets ouverts : 6</li>
+					<li>En cours : 3</li>
+					<li>À valider : 2</li>
+					<li>Heures restantes : 18h</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="tickets-recents">
+				<h2 id="tickets-recents">Tickets récents</h2>
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Titre</th>
+							<th scope="col">Projet</th>
+							<th scope="col">Statut</th>
+							<th scope="col">Priorité</th>
+							<th scope="col">Dernière mise à jour</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Bug formulaire contact</td>
+							<td>Portail client</td>
+							<td>En cours</td>
+							<td>Haute</td>
+							<td>05/02/2026</td>
+						</tr>
+						<tr>
+							<td>Ajout export PDF</td>
+							<td>Intranet RH</td>
+							<td>À valider</td>
+							<td>Moyenne</td>
+							<td>04/02/2026</td>
+						</tr>
+						<tr>
+							<td>Correction affichage mobile</td>
+							<td>Portail client</td>
+							<td>Nouveau</td>
+							<td>Basse</td>
+							<td>03/02/2026</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section aria-labelledby="projets">
+				<h2 id="projets">Projets</h2>
+				<ul>
+					<li>Portail client — Agence Nova</li>
+					<li>Intranet RH — Clinique Orion</li>
+					<li>Refonte site vitrine — Studio Atlas</li>
+				</ul>
+				<p><a href="projects.html">Voir tous les projets</a></p>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+		</footer>
+	</body>
+</html>

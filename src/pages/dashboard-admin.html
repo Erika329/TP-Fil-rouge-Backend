@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--Erika KAMDOM FOTSO 3A FISE-->
+<!--TP Fil Rouge / Application de gestion de Ticket-->
+<!--Page tableau de bord admin-->
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tableau de bord admin - Ticketing</title>
+		<link rel="stylesheet" href="../assets/css/style.css">
+	</head>
+	<body class="body-dash role-admin">
+		<header>
+			<div class="tableau_de_bord">
+				<h1>Tableau de bord</h1>
+				<nav class="Navigation_principale">
+					<ul>
+						<li><a href="dashboard-admin.html">Tableau de bord</a></li>
+						<li><a href="users.html">Utilisateurs</a></li>
+						<li><a href="clients-admin.html">Clients</a></li>
+						<li><a href="projects-admin.html">Projets</a></li>
+						<li><a href="tickets-admin.html">Tickets</a></li>
+						<li><a href="contracts.html">Contrats</a></li>
+						<li><a href="settings-admin.html">Paramètres</a></li>
+					</ul>
+				</nav>
+				<button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+			</div>
+		</header>
+
+		<main>
+			<section aria-labelledby="resume">
+				<h2 id="resume">Résumé admin</h2>
+				<ul class="resume">
+					<li>Clients : 4</li>
+					<li>Projets : 6</li>
+					<li>Tickets ouverts : 8</li>
+					<li>Contrats actifs : 5</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="activite">
+				<h2 id="activite">Activité récente</h2>
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Action</th>
+							<th scope="col">Utilisateur</th>
+							<th scope="col">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Création de projet</td>
+							<td>Admin</td>
+							<td>06/02/2026</td>
+						</tr>
+						<tr>
+							<td>Modification contrat</td>
+							<td>Admin</td>
+							<td>05/02/2026</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+		</footer>
+	</body>
+</html>

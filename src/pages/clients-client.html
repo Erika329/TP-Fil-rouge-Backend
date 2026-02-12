@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Page liste des clients pour client/collaborateur -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clients - Client/Collaborateur</title>
+</head>
+<body class="body-dash role-client">
+  <header>
+    <div class="tableau_de_bord">
+      <h1>Clients</h1>
+      <nav class="Navigation_principale">
+        <ul>
+          <li><a href="dashboard.html">Tableau de bord</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="tickets.html">Tickets</a></li>
+          <li><a href="profile.html">Profil</a></li>
+          <li><a href="settings.html">Paramètres</a></li>
+        </ul>
+      </nav>
+      <button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+    </div>
+  </header>
+  <main>
+    <section aria-labelledby="liste-clients">
+      <h2 id="liste-clients">Mes clients</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Contact</th>
+            <th>Projets</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Agence Nova</td>
+            <td>contact@nova.fr</td>
+            <td>3</td>
+            <td>Actif</td>
+          </tr>
+          <tr>
+            <td>Clinique Orion</td>
+            <td>it@orion.fr</td>
+            <td>1</td>
+            <td>Actif</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+  </footer>
+</body>
+</html>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../js/app.js" defer></script>
+</head>
+<body class="body-dash role-client">
+  ...existing code...
+      <div id="notif-client-collab" class="notif" style="display:none;"></div>
+  ...existing code...

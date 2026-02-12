@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--Erika KAMDOM FOTSO 3A FISE-->
+<!--TP Fil Rouge / Application de gestion de Ticket-->
+<!--Tickets Admin-->
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Utilisateurs - Ticketing</title>
+		<link rel="stylesheet" href="../assets/css/style.css">
+	</head>
+	<body class="body-dash role-admin">
+		<header>
+			<div class="tableau_de_bord">
+				<h1>Utilisateurs</h1>
+				<nav class="Navigation_principale">
+					<ul>
+						<li><a href="dashboard-admin.html">Tableau de bord</a></li>
+						<li><a href="users.html">Utilisateurs</a></li>
+						<li><a href="clients-admin.html">Clients</a></li>
+						<li><a href="projects-admin.html">Projets</a></li>
+						<li><a href="tickets-admin.html">Tickets</a></li>
+						<li><a href="contracts.html">Contrats</a></li>
+						<li><a href="settings-admin.html">Paramètres</a></li>
+					</ul>
+				</nav>
+				<button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+			</div>
+		</header>
+		<main>
+			<section aria-labelledby="resume-ticket">
+				<h2 id="resume-ticket">Résumé</h2>
+				<ul>
+					<li>ID : #TK-001</li>
+					<li>Titre : Bug formulaire contact</li>
+					<li>Projet : Portail client</li>
+					<li>Statut : En cours</li>
+					<li>Priorité : Haute</li>
+					<li>Type : Inclus</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="description-ticket">
+				<h2 id="description-ticket">Description</h2>
+				<p>Le formulaire contact ne transmet plus les messages depuis la dernière mise à jour.</p>
+			</section>
+
+			<section aria-labelledby="collaborateurs-ticket">
+				<h2 id="collaborateurs-ticket">Collaborateurs assignés</h2>
+				<ul>
+					<li>Erika K.</li>
+					<li>Samy N.</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="temps-ticket">
+				<h2 id="temps-ticket">Suivi du temps</h2>
+				<table>
+					<caption>Entrées de temps</caption>
+					<thead>
+						<tr>
+							<th scope="col">Date</th>
+							<th scope="col">Durée</th>
+							<th scope="col">Commentaire</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>05/02/2026</td>
+							<td>2h</td>
+							<td>Diagnostic initial</td>
+						</tr>
+						<tr>
+							<td>06/02/2026</td>
+							<td>1h</td>
+							<td>Correctif JS</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section aria-labelledby="actions-ticket">
+				<h2 id="actions-ticket">Actions</h2>
+				<ul>
+					<li><a href="ticket create.html">Modifier le ticket</a></li>
+					<li><a href="tickets.html">Retour à la liste</a></li>
+				</ul>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+		</footer>
+	</body>
+</html>

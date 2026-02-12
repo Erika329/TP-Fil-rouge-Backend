@@ -1,0 +1,78 @@
+<!--Erika KAMDOM FOTSO 3A FISE-->
+<!--TP Fil Rouge / Application de gestion de Ticket-->
+<!--Page liste des clients-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients - Ticketing</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="body-dash">
+    <header>
+        <div class="tableau_de_bord">
+            <h1>Clients</h1>
+            <nav class="Navigation_principale">
+                <ul>
+                    <li><a href="dashboard.html">Tableau de bord</a></li>
+                    <li><a href="projects.html">Projets</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                    <li><a href="ticket create.html">Créer un ticket</a></li>
+                    <li><a href="clients.html">Clients</a></li>
+                    <li><a href="profile.html">Profil</a></li>
+                    <li><a href="settings.html">Paramètres</a></li>
+                </ul>
+            </nav>
+            <button id="logout" class="logout-btn"><a href="index.html">Déconnexion</a></button>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="liste-clients">
+            <h2 id="liste-clients">Liste des clients</h2>
+
+                        <table id="clients-table">
+                <caption>Clients enregistrés</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Client</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Projets</th>
+                        <th scope="col">Statut</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-statut="actif">
+                        <td>Agence Nova</td>
+                        <td>contact@nova.fr</td>
+                        <td>3</td>
+                        <td>Actif</td>
+                        <td><a href="projects.html">Voir projets</a></td>
+                    </tr>
+                    <tr data-statut="actif">
+                        <td>Clinique Orion</td>
+                        <td>it@orion.fr</td>
+                        <td>1</td>
+                        <td>Actif</td>
+                        <td><a href="projects.html">Voir projets</a></td>
+                    </tr>
+                    <tr data-statut="inactif">
+                        <td>Entreprise Alpha</td>
+                        <td>alpha@entreprise.fr</td>
+                        <td>0</td>
+                        <td>Inactif</td>
+                        <td><a href="projects.html">Voir projets</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+    </footer>
+    <script src="../js/app.js" defer></script>
+</body>
+</html>

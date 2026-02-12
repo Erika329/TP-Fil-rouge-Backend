@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Erika KAMDOM FOTSO 3A FISE -->
+<!-- TP Fil Rouge / Application de gestion de Ticket -->
+<!-- Page gestion utilisateurs -->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisateurs - Ticketing</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="body-dash role-admin">
+    <header>
+        <div class="tableau_de_bord">
+            <h1>Utilisateurs</h1>
+            <nav class="Navigation_principale">
+                <ul>
+                    <li><a href="dashboard-admin.html">Tableau de bord</a></li>
+                    <li><a href="users.html">Utilisateurs</a></li>
+                    <li><a href="clients-admin.html">Clients</a></li>
+                    <li><a href="projects-admin.html">Projets</a></li>
+                    <li><a href="tickets-admin.html">Tickets</a></li>
+                    <li><a href="contracts.html">Contrats</a></li>
+                    <li><a href="settings-admin.html">Paramètres</a></li>
+                </ul>
+            </nav>
+            <a id="logout" class="logout-btn" href="index.html">Déconnexion</a>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="liste-utilisateurs">
+            <h2 id="liste-utilisateurs">Liste des utilisateurs</h2>
+            <table>
+                <caption>Comptes actifs</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Rôle</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Statut</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Erika K.</td>
+                        <td>Collaborateur</td>
+                        <td>erika@exemple.fr</td>
+                        <td>Actif</td>
+                        <td><button class="btn-supprimer">Supprimer</button></td>
+                    </tr>
+                    <tr>
+                        <td>Client Nova</td>
+                        <td>Client</td>
+                        <td>contact@nova.fr</td>
+                        <td>Actif</td>
+                        <td><button class="btn-supprimer">Supprimer</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section aria-labelledby="formulaire-user">
+            <h2 id="formulaire-user">Création d'un nouvel utilisateur</h2>
+            <form id="user-form" class="user-form">
+                <label for="nom">Nom</label>
+                <input id="nom" name="nom" type="text" placeholder="Nom de l'utilisateur">
+                <div id="nom_error" class="error-text hidden">Le nom est obligatoire.</div>
+
+                <label for="prenom">Prénom</label>
+                <input id="prenom" name="prenom" type="text" placeholder="Prénom de l'utilisateur">
+                <div id="prenom_error" class="error-text hidden">Le prénom est obligatoire.</div>
+
+                <label for="mail">E-mail</label>
+                <input id="mail" name="mail" type="email" placeholder="exemple@domaine.fr">
+                <div id="email_error" class="error-text hidden">L'email est obligatoire.</div>
+
+                <label for="role">Rôle</label>
+                <select id="role" name="role">
+                    <option value="">Sélectionner un rôle</option>
+                    <option value="collaborateur">Collaborateur</option>
+                    <option value="administrateur">Administrateur</option>
+                    <option value="client">Client</option>
+                </select>
+                <div id="role_error" class="error-text hidden">Le rôle est obligatoire.</div>
+
+                <button type="submit">Enregistrer</button>
+                <div id="user_valide" class="valid-text hidden">Utilisateur enregistré avec succès.</div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
