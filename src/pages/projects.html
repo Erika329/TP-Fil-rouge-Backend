@@ -35,13 +35,15 @@
 				<input id="recherche-projet" name="recherche-projet" type="search" placeholder="Nom du projet">
 				<label for="filtre-statut">Client</label>
 				<select id="filtre-statut" name="filtre-statut">
+					<option value="tous">Tous</option>
 					<option value="agence nova">Agence Nova</option>
 					<option value="clinique orion">Clinique Orion</option>
 				</select>
 				<label for="filtre-projet">Statut</label>
 				<select id="filtre-projet" name="filtre-projet">
-					<option value="tous">Actif</option>
-					<option value="portail">Inactif</option>
+					<option value="tous">Tous</option>
+					<option value="actif">Actif</option>
+					<option value="inactif">Inactif</option>
 				</select>
 				<button type="button" id="btn-filtrer">Filtrer</button>
 			</form>	
@@ -85,6 +87,6 @@
 		<footer class="footer">
 			<p>© Erika - ESIEA 2026 - Application de gestion de ticketing</p>
 		</footer>
-	<script src="../js/app.js" defer></script>
+		<script src="../js/app.js"></script>
 </body>
 </html>

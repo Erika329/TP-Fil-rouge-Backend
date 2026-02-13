@@ -8,12 +8,12 @@
 //Vérification des champs du formulaire de connexion
 function check_login(){
 	//On vérifie les champs du formulaire
-	const identifiant = document.querySelector('#identifiant');
+	const identifiant = document.querySelector("#identifiant");
 	const mot_de_passe = document.querySelector('#mot_de_passe');
 
 	//On récupère la valeur des input
 	console.log("identifiant :", identifiant.value);
-	//à retirer plus tard
+	//à retirer plus tard pour la sécurité
 	console.log("mot_de_passe :", mot_de_passe.value);
 
 	let nb_errors = 0;
@@ -42,7 +42,8 @@ const f = document.querySelector('#submitform');
 if(f) {
 	//écouteur d'évènement 
 	f.addEventListener("submit", function(event){
-
+		// on empeche la soumission du formulaire
+		// pour éviter le rechargement de page
 		event.preventDefault();
 		console.log("Formulaire soumis");
 
@@ -181,7 +182,7 @@ if(userForm) {
     const emailError = document.querySelector('#email_error');
     const roleError = document.querySelector('#role_error');
 
-    // Création de la notification
+    // Création de la notification si elle n'existe pas encore
     let notifUser = document.querySelector('.notif');
     if(!notifUser) {
         notifUser = document.createElement('div');
@@ -310,9 +311,7 @@ if(btnEnregistrer && ticketForm) {
 
 function filtrerTable(config) {
 
-	
 	const recherche = config.recherche ? config.recherche.value.toLowerCase() : "";
-	//si le tbody du tableau existe on selectionne toutes les lignes sinon on renvoie un tableau vide pour eviter les erreurs
 	const lignes = config.tbody ? config.tbody.querySelectorAll("tr") : [];
 
 	lignes.forEach(function(tr) {
@@ -335,24 +334,20 @@ function filtrerTable(config) {
 			if (!match) visible = false;
 		}
 
-		// Filtres select
-		if (config.selectFilters) {
+	
+if (config.selectFilters) {
+    config.selectFilters.forEach(function(filtre) {
+        const valeurFiltre = filtre.element ? filtre.element.value.trim().toLowerCase() : "tous";
+        const texteCellule = cellules[filtre.column].textContent.trim().toLowerCase();
 
-			config.selectFilters.forEach(function(filtre) {
+        // On compare en utilisant includes pour matcher partiellement et ignorer casse
+        if (valeurFiltre !== "tous" && !texteCellule.includes(valeurFiltre)) {
+            visible = false;
+        }
+    });
+}
 
-				const valeur = filtre.element ? filtre.element.value.toLowerCase() : "tous";
 
-				if (valeur !== "tous") {
-
-					const texteCellule =
-						cellules[filtre.column].textContent.toLowerCase();
-
-					if (!texteCellule.includes(valeur)) {
-						visible = false;
-					}
-				}
-			});
-		}
 
 		tr.style.display = visible ? "" : "none";
 	});
@@ -433,6 +428,34 @@ if (collabBody) {
 			filtrerTable(collabConfig);
 		});
 	}
+}
+
+//FILTRE DES PROJETS
+
+const projectsBody = document.querySelector("#projects-table tbody");
+const btnFiltrer = document.querySelector("#btn-filtrer");
+const rechercheProjet = document.querySelector("#recherche-projet");
+
+if (projectsBody && btnFiltrer) {
+    const projectsConfig = {
+        tbody: projectsBody,
+        recherche: rechercheProjet,
+        searchColumns: [0], // on cherche dans la colonne projet
+        selectFilters: [
+            { element: document.querySelector("#filtre-statut"), column: 1 }, // Client
+            { element: document.querySelector("#filtre-projet"), column: 4 }  // Statut
+        ]
+    };
+
+    btnFiltrer.addEventListener("click", function() {
+        filtrerTable(projectsConfig);
+    });
+
+    if (projectsConfig.recherche) {
+        projectsConfig.recherche.addEventListener("input", function() {
+            filtrerTable(projectsConfig);
+        });
+    }
 }
 
 
@@ -545,13 +568,14 @@ if (notifTicketClient && (btnsAccepter.length > 0 || btnsRefuser.length > 0)) {
 	});
 }
 
+
 // Notifications suppression utilisateur
 const notifUser = document.createElement('div');
 notifUser.classList.add('notif');
 document.body.appendChild(notifUser);
 
 // Boutons Supprimer dans le tableau utilisateurs
-const btnSupprimer = document.querySelectorAll('tbody tr button');
+const btnSupprimer = document.querySelectorAll('tbody tr button.btn-supprimer');
 
 btnSupprimer.forEach(btn => {
     btn.addEventListener('click', function() {
@@ -563,6 +587,27 @@ btnSupprimer.forEach(btn => {
         notifUser.textContent = `L'utilisateur ${userName} a bien été supprimé.`;
         notifUser.style.display = 'block';
         setTimeout(() => { notifUser.style.display = 'none'; }, 2500);
+    });
+});
+
+// Notifications suppression projet
+const notifProjets = document.createElement('div');
+notifProjets.classList.add('notif');
+document.body.appendChild(notifProjets);
+
+// Boutons Supprimer dans le tableau projets
+const btnSupprimerprojet = document.querySelectorAll('tbody tr button.btn-supprimer-projets');
+
+btnSupprimerprojet.forEach(btn => {
+    btn.addEventListener('click', function() {
+        const row_proj = btn.closest('tr'); // la ligne du tableau
+        const projName = row_proj.querySelector('td').textContent; // nom du projet
+        row_proj.remove(); // supprime la ligne du tableau
+
+        // Affiche notification
+        notifProjets.textContent = `Le projet ${projName} a bien été supprimé.`;
+        notifProjets.style.display = 'block';
+        setTimeout(() => { notifProjets.style.display = 'none'; }, 2500);
     });
 });
 
