@@ -8,12 +8,12 @@
 //Vérification des champs du formulaire de connexion
 function check_login(){
 	//On vérifie les champs du formulaire
-	const identifiant = document.querySelector("#identifiant");
+	const identifiant = document.querySelector('#identifiant');
 	const mot_de_passe = document.querySelector('#mot_de_passe');
 
 	//On récupère la valeur des input
 	console.log("identifiant :", identifiant.value);
-	//à retirer plus tard pour la sécurité
+	//à retirer plus tard
 	console.log("mot_de_passe :", mot_de_passe.value);
 
 	let nb_errors = 0;
@@ -42,8 +42,7 @@ const f = document.querySelector('#submitform');
 if(f) {
 	//écouteur d'évènement 
 	f.addEventListener("submit", function(event){
-		// on empeche la soumission du formulaire
-		// pour éviter le rechargement de page
+
 		event.preventDefault();
 		console.log("Formulaire soumis");
 
@@ -182,7 +181,7 @@ if(userForm) {
     const emailError = document.querySelector('#email_error');
     const roleError = document.querySelector('#role_error');
 
-    // Création de la notification si elle n'existe pas encore
+    // Création de la notification
     let notifUser = document.querySelector('.notif');
     if(!notifUser) {
         notifUser = document.createElement('div');
@@ -311,7 +310,9 @@ if(btnEnregistrer && ticketForm) {
 
 function filtrerTable(config) {
 
+	
 	const recherche = config.recherche ? config.recherche.value.toLowerCase() : "";
+	//si le tbody du tableau existe on selectionne toutes les lignes sinon on renvoie un tableau vide pour eviter les erreurs
 	const lignes = config.tbody ? config.tbody.querySelectorAll("tr") : [];
 
 	lignes.forEach(function(tr) {

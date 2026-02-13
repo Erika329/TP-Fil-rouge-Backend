@@ -1,24 +1,4 @@
-/* Notification ticket client */
-.notif {
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #2ecc40;
-    color: #fff;
-    padding: 1em 2em;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    font-size: 1.1em;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-}
-.notif[style*="display: block"] {
-    opacity: 1;
-    pointer-events: auto;
-}
+
 /*Erika KAMDOM FOTSO 3A FISE
 Mise en page CSS
 TP Fil rouge*/
@@ -45,6 +25,27 @@ TP Fil rouge*/
     border: 1px solid #bff2b8;
     padding: 6px 10px;
     border-radius: 8px;
+}
+/* Notification ticket client */
+.notif {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2ecc40;
+    color: #fff;
+    padding: 1em 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 1.1em;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.notif[style*="display: block"] {
+    opacity: 1;
+    pointer-events: auto;
 }
 /*gradient de couleur issus du site cssgrandient.io*/
 
