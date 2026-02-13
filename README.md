@@ -42,3 +42,13 @@ Explications des différents fichiers HTML :
 
 Validation du HTML avec le W3C (mettre le lien d'une page html) : 
 https://validator.w3.org/nu/
+
+Pour lancer l'application dans le navigateur:
+
+Prérequis: Installer php 8.5.1
+1: Lancer php -S localhost:8000
+2: http://localhost:8000/src/pages/index.php
+
+Backend:
+
+PHP Procedural (sans classe, sans objets, simple)

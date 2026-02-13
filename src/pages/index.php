@@ -1,7 +1,17 @@
+<?php
+// Erika KAMDOM FOTSO 3A FISE
+// TP Fil Rouge / Application de gestion de Ticket
+// Page de connexion
+
+// Traitement PHP côté serveur pour debug
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $identifiant = htmlspecialchars($_POST["identifiant"] ?? "");
+    $motdepasse = htmlspecialchars($_POST["mot_de_passe"] ?? "");
+    // Message PHP dans le terminal pour montrer l'action
+    echo "[PHP] Connexion tenté avec identifiant: $identifiant, mot de passe: $motdepasse\n";
+}
+?>
 <!DOCTYPE html>
-<!--Erika KAMDOM FOTSO 3A FISE-->
-<!--TP Fil Rouge / Application de gestion de Ticket-->
-<!--Page de connexion-->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -23,11 +33,10 @@
                 <div id="connexion_valide" class="valid-text hidden">Connexion réussi</div>
             </form>
             <br>
-            <a href="forgot-password.html" class="forgot-link">Mot de passe oublié?</a>
+            <a href="forgot-password.php" class="forgot-link">Mot de passe oublié?</a>
             <br>
-            <a href="createaccount.html" class="forgot-link">Créer un compte</a>
+            <a href="createaccount.php" class="forgot-link">Créer un compte</a>
         </div>
         <script src="../js/app.js"></script>
     </body>
-
 </html>
