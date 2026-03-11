@@ -5,6 +5,18 @@ Une application de gestion de tickets pour une société de services.
 Les clients suivent leurs demandes et valident si besoin.
 Les collaborateurs créent et traitent les tickets pour les clients.
 
+## Tester le projet
+
+Depuis la racine du projet, lancer le serveur PHP :
+```bash
+php -S localhost:8002
+```
+
+Puis ouvrir dans le navigateur :
+
+- Page de connexion : http://localhost:8002/src/pages/index.php
+- Tableau de bord : http://localhost:8002/src/pages/dashboard.html
+
 ## Pages HTML
 - [Connexion](src/pages/index.php)
 - [Inscription](src/pages/createaccount.php)
