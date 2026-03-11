@@ -21,8 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $utilisateur = $stmt->fetch();
 
         if ($utilisateur && password_verify($motdepasse, $utilisateur["mot_de_passe"])) {
-            // Connexion réussie, redirection vers le dashboard
-            header("Location: dashboard.html");
+            // Redirection selon le rôle de l'utilisateur
+            if ($utilisateur["role"] === "admin") {
+                header("Location: dashboard-admin.html");
+            } elseif ($utilisateur["role"] === "client") {
+                header("Location: dashboard-client.html");
+            } else {
+                header("Location: dashboard.html");
+            }
             exit;
         } else {
             $message = "Identifiant ou mot de passe incorrect.";
