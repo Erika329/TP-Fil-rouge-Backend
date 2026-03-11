@@ -3,38 +3,39 @@
 // TP Fil Rouge / Application de gestion de Ticket
 // Page liste des tickets
 
-// Données statiques des tickets
-$tickets = [
-    [
-        "id" => "#TK-001",
-        "titre" => "Bug formulaire contact",
-        "projet" => "Portail client",
-        "statut" => "En cours",
-        "priorite" => "Haute",
-        "type" => "Inclus",
-    ],
-    [
-        "id" => "#TK-002",
-        "titre" => "Ajout export PDF",
-        "projet" => "Intranet RH",
-        "statut" => "En attente client",
-        "priorite" => "Moyenne",
-        "type" => "Facturable",
-    ],
-    [
-        "id" => "#TK-003",
-        "titre" => "Mise à jour logo",
-        "projet" => "Portail client",
-        "statut" => "Nouveau",
-        "priorite" => "Basse",
-        "type" => "Inclus",
-    ],
-];
+// Connexion à la base de données
+require_once __DIR__ . "/../config/database.php";
 
 // Récupération des filtres depuis l'URL via $_GET
 $filtre_statut = $_GET["filtre-statut"] ?? "tous";
 $filtre_projet = $_GET["filtre-projet"] ?? "tous";
 $filtre_type   = $_GET["filtre-type"] ?? "tous";
+
+// Construction de la requête SQL avec filtres
+$sql = "SELECT tickets.id, tickets.titre, projets.nom AS projet, tickets.statut, tickets.priorite, tickets.type
+        FROM tickets
+        JOIN projets ON tickets.projet_id = projets.id
+        WHERE 1=1";
+
+$params = [];
+
+if ($filtre_statut !== "tous") {
+    $sql .= " AND tickets.statut = :statut";
+    $params[":statut"] = $filtre_statut;
+}
+if ($filtre_projet !== "tous") {
+    $sql .= " AND LOWER(projets.nom) = :projet";
+    $params[":projet"] = $filtre_projet;
+}
+if ($filtre_type !== "tous") {
+    $sql .= " AND tickets.type = :type";
+    $params[":type"] = $filtre_type;
+}
+
+// Exécution de la requête
+$stmt = $pdo->prepare($sql);
+$stmt->execute($params);
+$tickets = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <!--Erika KAMDOM FOTSO 3A FISE-->
@@ -72,19 +73,17 @@ $filtre_type   = $_GET["filtre-type"] ?? "tous";
             <!-- Formulaire de filtre en GET pour filtrer côté serveur -->
             <form id="filtre-tickets-form" action="" method="GET">
                 <label for="recherche-ticket">Recherche</label>
-                <!-- La valeur est conservée après rechargement grâce à $_GET -->
                 <input id="recherche-ticket" name="recherche-ticket" type="search"
                     placeholder="Titre ou ID"
                     value="<?= htmlspecialchars($_GET['recherche-ticket'] ?? '') ?>">
 
                 <label for="filtre-statut">Statut</label>
-                <!-- "selected" est remis automatiquement sur le bon filtre après rechargement -->
                 <select id="filtre-statut" name="filtre-statut">
                     <option value="tous" <?= $filtre_statut === "tous" ? "selected" : "" ?>>Tous</option>
                     <option value="nouveau" <?= $filtre_statut === "nouveau" ? "selected" : "" ?>>Nouveau</option>
-                    <option value="en cours" <?= $filtre_statut === "en cours" ? "selected" : "" ?>>En cours</option>
+                    <option value="en-cours" <?= $filtre_statut === "en-cours" ? "selected" : "" ?>>En cours</option>
                     <option value="termine" <?= $filtre_statut === "termine" ? "selected" : "" ?>>Terminé</option>
-                    <option value="en attente client" <?= $filtre_statut === "en attente client" ? "selected" : "" ?>>En attente client</option>
+                    <option value="en-attente" <?= $filtre_statut === "en-attente" ? "selected" : "" ?>>En attente client</option>
                 </select>
 
                 <label for="filtre-projet">Projet</label>
@@ -118,25 +117,16 @@ $filtre_type   = $_GET["filtre-type"] ?? "tous";
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Boucle sur le tableau $tickets avec application des filtres -->
+                    <!-- Boucle sur les tickets récupérés depuis la BDD -->
                     <?php foreach($tickets as $ticket): ?>
-                        <?php
-                            // On saute la ligne si elle ne correspond pas au filtre statut
-                            if ($filtre_statut !== "tous" && strtolower($ticket["statut"]) !== $filtre_statut) continue;
-                            // On saute la ligne si elle ne correspond pas au filtre projet
-                            if ($filtre_projet !== "tous" && strtolower($ticket["projet"]) !== $filtre_projet) continue;
-                            // On saute la ligne si elle ne correspond pas au filtre type
-                            if ($filtre_type !== "tous" && strtolower($ticket["type"]) !== $filtre_type) continue;
-                        ?>
                         <tr>
-                            <!-- htmlspecialchars pour sécuriser l'affichage -->
-                            <td><?= htmlspecialchars($ticket["id"]) ?></td>
+                            <td><?= htmlspecialchars("#TK-" . str_pad($ticket["id"], 3, "0", STR_PAD_LEFT)) ?></td>
                             <td><?= htmlspecialchars($ticket["titre"]) ?></td>
                             <td><?= htmlspecialchars($ticket["projet"]) ?></td>
                             <td><?= htmlspecialchars($ticket["statut"]) ?></td>
                             <td><?= htmlspecialchars($ticket["priorite"]) ?></td>
                             <td><?= htmlspecialchars($ticket["type"]) ?></td>
-                            <td><a href="ticket detail.html">Voir</a></td>
+                            <td><a href="ticket detail.php?id=<?= $ticket['id'] ?>">Voir</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

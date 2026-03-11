@@ -1,6 +1,8 @@
 # TP Fil Rouge — Ticketing
 FRONTEND + BACKEND PHP
-# **Projet** :
+
+# **Projet**:
+
 Une application de gestion de tickets pour une société de services.
 Les clients suivent leurs demandes et valident si besoin.
 Les collaborateurs créent et traitent les tickets pour les clients.
@@ -90,4 +92,3 @@ Il est possible de lire le nombre d'erreurs dans le formulaire en ouvrant la con
 
 
 La partie ne contenant que le front end se trouve dans ce repo GIT : https://github.com/Erika329/TP-fil-rouge-HTML-CSS.git
-
