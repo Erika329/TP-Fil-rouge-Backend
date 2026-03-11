@@ -1,8 +1,8 @@
-<?php
+
 // Erika KAMDOM FOTSO 3A FISE
 // TP Fil Rouge / Application de gestion de Ticket
 // Service de traitement du formulaire de création de ticket
-
+/*
 class TicketService {
     public $titre;
     public $projet;
@@ -38,4 +38,4 @@ class TicketService {
             "statut"      => $this->statut,
         ];
     }
-}
+}*/

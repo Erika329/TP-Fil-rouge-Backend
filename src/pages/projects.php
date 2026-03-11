@@ -113,12 +113,12 @@ $clients = $pdo->query("SELECT id, nom FROM clients")->fetchAll();
                         <!-- Boucle sur les projets récupérés depuis la BDD -->
                         <?php foreach($projets as $projet): ?>
                             <tr>
-                                <td><a href="project detail.html"><?= htmlspecialchars($projet["nom"]) ?></a></td>
+                                <td><a href="project detail.php"><?= htmlspecialchars($projet["nom"]) ?></a></td>
                                 <td><?= htmlspecialchars($projet["client"]) ?></td>
                                 <td><?= htmlspecialchars($projet["contrat"]) ?></td>
                                 <td><?= htmlspecialchars($projet["statut"]) ?></td>
                                 <td>
-                                    <a href="project detail.html?id=<?= $projet['id'] ?>">Voir</a> |
+                                    <a href="project detail.php?id=<?= $projet['id'] ?>">Voir</a> |
                                     <a href="project create.php?id=<?= $projet['id'] ?>">Éditer</a>
                                 </td>
                             </tr>
